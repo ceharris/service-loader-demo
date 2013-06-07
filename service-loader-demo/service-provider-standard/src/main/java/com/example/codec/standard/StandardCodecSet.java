@@ -8,7 +8,7 @@ public class StandardCodecSet implements CodecSet {
 
 	@Override
 	public boolean supports(String encodingName) {
-		return true;
+		return "US-ASCII".equals(encodingName);
 	}
 
 	@Override
