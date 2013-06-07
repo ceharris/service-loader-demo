@@ -17,8 +17,10 @@ A service provider specifies some metadata in plain text files in
 the `META-INF/services` class path container.  The name of each text
 file specifies the fully-qualified class name of an interface or class
 specified in the service API.  The file contents consist of a single line
-of text that specifies the fully-qualified class name of an class that 
-implements or extends the type specified in the file name.
+of text that specifies the fully-qualified class name of a class that 
+implements or extends the type specified in the file name.  Each 
+implementation class must have a public no-arg constructor that is used
+by the `ServiceLoader` to construct an instance of the class.
 
 An application that wishes to use a service needs a mechanism to locate
 a suitable provider for the service.  The `ServiceLoader` mechanism provides
