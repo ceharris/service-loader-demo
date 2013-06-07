@@ -13,17 +13,22 @@ service is the JavaMail (`javax.mail`) API.  A service can have one or
 more _providers_ that implement all or part of the API, perhaps in different 
 ways.
 
-An application that wishes to use a service needs a mechanism to locate
-a suitable provider for the service.  The `ServiceLoader` mechanism provides
-underlying support for a _service locator_ object.  The locator is used to
-find a suitable provider for a given service.
-
 A service provider specifies some metadata in plain text files in 
 the `META-INF/services` class path container.  The name of each text
 file specifies the fully-qualified class name of an interface or class
 specified in the service API.  The file contents consist of a single line
 of text that specifies the fully-qualified class name of an class that 
 implements or extends the type specified in the file name.
+
+An application that wishes to use a service needs a mechanism to locate
+a suitable provider for the service.  The `ServiceLoader` mechanism provides
+underlying support for a _service locator_ object.  The locator is used to
+find a suitable provider for a given service.  The `ServiceLoader` class
+provides methods that can locate implementations of a given interface or
+class in the service API on the application class path, using the metadata 
+specified by one or more service providers.  The service locator is 
+responsible for determining which provider to select when multiple providers 
+are available.
 
 This demo is Maven project that consists of several submodules:
 
