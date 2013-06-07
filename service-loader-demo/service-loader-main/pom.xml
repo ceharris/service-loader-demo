@@ -15,5 +15,17 @@
   		<artifactId>service-provider-api</artifactId>
   		<version>${project.version}</version>
   	</dependency>
+  	<dependency>
+  		<groupId>demo</groupId>
+  		<artifactId>service-provider-standard</artifactId>
+  		<version>${project.version}</version>
+  		<scope>runtime</scope>
+  	</dependency>
+  	<dependency>
+  		<groupId>demo</groupId>
+  		<artifactId>service-provider-alternate</artifactId>
+  		<version>${project.version}</version>
+  		<scope>runtime</scope>
+  	</dependency>
   </dependencies>
 </project>
